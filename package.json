@@ -33,6 +33,7 @@
 		"@angular/compiler-cli": "~12.2.16",
 		"@angular/language-service": "~12.2.16",
 		"@types/node": "^12.11.1",
+		"angular-cli-ghpages": "^1.0.3",
 		"codelyzer": "^6.0.0",
 		"prettier": "2.7.1",
 		"ts-node": "~7.0.0",
