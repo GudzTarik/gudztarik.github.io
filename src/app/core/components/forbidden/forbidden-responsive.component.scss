@@ -1,0 +1,31 @@
+@import 'variables';
+
+@media (max-width: $desktop-big) {
+	.forbidden-wrapper {
+		padding-top: 40px;
+		padding-bottom: 40px;
+
+		.section-sub-title {
+			margin-top: 40px;
+		}
+
+		.section-description {
+			margin-top: 20px;
+		}
+	}
+}
+
+@media (max-width: $laptop-big) {
+	.forbidden-wrapper {
+		padding-top: 34px;
+		padding-bottom: 34px;
+
+		.section-sub-title {
+			margin-top: 34px;
+		}
+
+		.section-description {
+			margin-top: 18px;
+		}
+	}
+}

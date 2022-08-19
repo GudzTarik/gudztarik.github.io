@@ -1,0 +1,127 @@
+<div class="requests-wrapper">
+	<div class="requests-table">
+		<table (matSortChange)="sortData($event)"
+					 [dataSource]="requests"
+					 class="table"
+					 mat-table
+					 matSort>
+			<ng-container matColumnDef="name">
+				<th *matHeaderCellDef
+						class="label"
+						mat-header-cell>
+					{{ 'request.nameLabel' | translate }}
+				</th>
+
+				<td *matCellDef="let element"
+						mat-cell>
+					<div class="label">
+						<div class="name-item-wrapper">
+							<div class="name-item name-item-editor">{{ element.name }}</div>
+						</div>
+					</div>
+				</td>
+			</ng-container>
+
+			<ng-container matColumnDef="description">
+				<th *matHeaderCellDef
+						class="label"
+						mat-header-cell>
+					{{ 'request.descriptionLabel' | translate }}
+				</th>
+
+				<td *matCellDef="let element"
+						mat-cell
+						matTooltip="{{element.description}}">
+					<div class="label">{{ element.description | slice:0:10 }}...</div>
+				</td>
+			</ng-container>
+
+			<ng-container matColumnDef="image">
+				<th *matHeaderCellDef
+						class="label"
+						mat-header-cell>
+					{{ 'request.imageLabel' | translate }}
+				</th>
+
+				<td *matCellDef="let element"
+						mat-cell>
+					<div class="label">{{ element.imageUrl}}</div>
+				</td>
+			</ng-container>
+
+			<ng-container matColumnDef="status">
+				<th *matHeaderCellDef
+						class="label"
+						mat-header-cell>
+					{{ 'request.statusLabel' | translate }}
+				</th>
+
+				<td *matCellDef="let element"
+						mat-cell>
+					<div class="label">{{ element.requestStatus}}</div>
+				</td>
+			</ng-container>
+
+			<ng-container matColumnDef="createdBy">
+				<th *matHeaderCellDef
+						class="label"
+						mat-header-cell>
+					{{ 'request.createdByLabel' | translate }}
+				</th>
+
+				<td *matCellDef="let element"
+						mat-cell>
+					<div class="label">{{ element.createdBy.fullName}}</div>
+				</td>
+			</ng-container>
+
+			<ng-container matColumnDef="actions">
+				<th *matHeaderCellDef
+						class="label"
+						mat-header-cell>
+					{{ 'request.actionsLabel' | translate }}
+				</th>
+
+				<td *matCellDef="let element"
+						class="actions"
+						mat-cell>
+					<div *ngIf="element.status !== 'Deleted'"
+							 class="label">
+						<mat-icon [matMenuTriggerFor]="menu"
+											class="icon"
+											svgIcon="options-icon">
+						</mat-icon>
+
+						<mat-menu #menu="matMenu">
+							<button (click)="openDeleteAccountDialog(element.id)"
+											mat-menu-item>
+								{{ 'request.deleteAccountLabel' | translate }}
+							</button>
+						</mat-menu>
+					</div>
+				</td>
+			</ng-container>
+
+			<tr *matHeaderRowDef="tableColumns"
+					mat-header-row>
+			</tr>
+
+			<tr *matRowDef="let row; columns: tableColumns"
+					mat-row>
+			</tr>
+		</table>
+
+		<p *ngIf="!requests.length"
+			 class="records-not-found">
+			{{ 'general.noRecordsFoundLabel' | translate }}
+		</p>
+	</div>
+
+	<mat-paginator (page)="paginatorEvent($event)"
+								 [length]="totalCount"
+								 [pageIndex]="getRequestsFormGroup.controls['pageIndex'].value"
+								 [pageSizeOptions]="pageSizeOptions"
+								 [pageSize]="getRequestsFormGroup.controls['pageSize'].value"
+								 class="paginator">
+	</mat-paginator>
+</div>

@@ -1,0 +1,57 @@
+<header>
+	<div class="d-f j-c-sb f-w-w gap-10 a-i-c flex-1">
+		<div class="d-f a-i-c gap-10">
+			<button (click)="openSidebar()"
+							class="burger-menu"
+							disableRipple
+							mat-button>
+				<mat-icon [svgIcon]="'burger-icon'"></mat-icon>
+			</button>
+
+			<a [routerLink]="['/']">
+				<p class="text-bold logo">{{ 'general.iLoadLabel' | translate }}</p>
+			</a>
+		</div>
+
+		<div class="d-f f-w-w gap-12 header-nav">
+			<a *ngIf="authService.isAuthenticated()" [routerLink]="['users']"
+				 routerLinkActive="active">{{ 'general.usersLabel' | translate }}</a>
+
+			<a *ngIf="authService.isAuthenticated()" [routerLink]="['requests']"
+				 routerLinkActive="active">{{ 'general.requestsLabel' | translate }}</a>
+		</div>
+
+		<div class="actions d-f a-i-c gap-10">
+			<button *ngIf="authService.isAuthenticated()" [routerLink]="['dashboard', 'request']" class="default-button"
+							mat-button>
+				{{ 'general.createRequestLabel' | translate }}
+			</button>
+
+			<button #matMenuTrigger="matMenuTrigger"
+							[matMenuTriggerFor]="authMenu"
+							[ngClass]="{ opened: matMenuTrigger.menuOpen }"
+							class="profile-button"
+							mat-button>
+				<mat-icon [svgIcon]="'burger-icon'" class="burger-icon"></mat-icon>
+
+				<mat-icon [svgIcon]="'person-icon'" class="person-icon"></mat-icon>
+
+				<mat-menu #authMenu="matMenu">
+					<ng-container *ngIf="!authService.isAuthenticated()">
+						<a [routerLink]="['/auth/sign-up']" mat-menu-item>{{ 'auth.signUpLabel' | translate }}</a>
+
+						<a [routerLink]="['/auth/sign-in']" mat-menu-item>{{ 'auth.signInLabel' | translate }}</a>
+					</ng-container>
+
+					<ng-container *ngIf="authService.isAuthenticated()">
+						<button [routerLink]="['/account']" mat-menu-item>
+							{{ 'general.accountLabel' | translate }}
+						</button>
+
+						<button (click)="logout()" mat-menu-item>{{ 'auth.logoutLabel' | translate }}</button>
+					</ng-container>
+				</mat-menu>
+			</button>
+		</div>
+	</div>
+</header>

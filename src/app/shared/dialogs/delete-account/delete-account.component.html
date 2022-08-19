@@ -1,0 +1,19 @@
+<div class="dialog-wrapper">
+	<div class="dialog-header">
+		<p class="dialog-title">{{ 'user.deleteAccountLabel' | translate }}</p>
+
+		<mat-icon [mat-dialog-close] class="icon" svgIcon="close-icon"></mat-icon>
+	</div>
+
+	<p class="dialog-subtitle">{{ 'user.confirmDeleteAccountLabel' | translate }}</p>
+
+	<div class="dialog-button-wrapper">
+		<button [mat-dialog-close]="false" class="default-button grey-button" mat-button>
+			{{ 'general.cancelLabel' | translate }}
+		</button>
+
+		<button [mat-dialog-close]="true" class="default-button" mat-button>
+			{{ 'general.deleteLabel' | translate }}
+		</button>
+	</div>
+</div>

@@ -1,0 +1,42 @@
+{
+	"name": "iLoad",
+	"version": "0.0.0",
+	"scripts": {
+		"ng": "ng",
+		"start": "ng serve --o",
+		"build": "ng lint; ng build --configuration=development --output-hashing all",
+		"build-prod": "ng lint; ng build --configuration=production --output-hashing all",
+		"tslint": "tslint -p tsconfig.json",
+		"tslint-fix": "tslint --fix -p tsconfig.json"
+	},
+	"private": true,
+	"dependencies": {
+		"@angular/animations": "^12.2.16",
+		"@angular/cdk": "^12.2.13",
+		"@angular/common": "^12.2.16",
+		"@angular/compiler": "^12.2.16",
+		"@angular/core": "^12.2.16",
+		"@angular/forms": "^12.2.16",
+		"@angular/material": "^12.2.13",
+		"@angular/platform-browser": "^12.2.16",
+		"@angular/platform-browser-dynamic": "^12.2.16",
+		"@angular/router": "^12.2.16",
+		"@ngx-translate/core": "^14.0.0",
+		"@ngx-translate/http-loader": "^7.0.0",
+		"rxjs": "~6.6.7",
+		"tslib": "^2.0.0",
+		"zone.js": "~0.11.4"
+	},
+	"devDependencies": {
+		"@angular-devkit/build-angular": "~12.2.17",
+		"@angular/cli": "~12.2.17",
+		"@angular/compiler-cli": "~12.2.16",
+		"@angular/language-service": "~12.2.16",
+		"@types/node": "^12.11.1",
+		"codelyzer": "^6.0.0",
+		"prettier": "2.7.1",
+		"ts-node": "~7.0.0",
+		"tslint": "~6.1.0",
+		"typescript": "~4.3.5"
+	}
+}

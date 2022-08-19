@@ -1,0 +1,21 @@
+<i-load-spinner></i-load-spinner>
+
+<mat-sidenav-container *ngIf="!isAuthPage; else auth">
+	<mat-sidenav #sidenav (closed)="onSidenavClosed()" position="start">
+		<i-load-sidebar (closeSidenav)="sidenav.close()" (openSidenav)="sidenav.open()"></i-load-sidebar>
+	</mat-sidenav>
+
+	<mat-sidenav-content>
+		<main>
+			<i-load-header></i-load-header>
+
+			<section class="container">
+				<router-outlet></router-outlet>
+			</section>
+		</main>
+	</mat-sidenav-content>
+</mat-sidenav-container>
+
+<ng-template #auth>
+	<router-outlet></router-outlet>
+</ng-template>

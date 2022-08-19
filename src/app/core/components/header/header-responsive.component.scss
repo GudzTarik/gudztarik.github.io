@@ -1,0 +1,26 @@
+@import 'variables';
+
+@media (max-width: $desktop-small) {
+	.logo p {
+		font-size: 20px;
+	}
+
+	.header-nav a {
+		font-size: 14px;
+	}
+}
+
+@media (max-width: $mobile) {
+	.dialog-wrapper {
+		width: 280px;
+	}
+
+	.header-nav,
+	.actions .mat-menu-trigger {
+		display: none;
+	}
+
+	.burger-menu {
+		display: block;
+	}
+}

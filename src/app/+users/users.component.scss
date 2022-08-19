@@ -1,0 +1,57 @@
+@import 'variables';
+
+:host {
+	display: flex;
+	flex: 1;
+}
+
+.users-wrapper {
+	background: $default-linear-gradient;
+	max-width: inherit;
+	padding: 48px 25px;
+	flex-direction: column;
+
+	.users-table {
+		width: calc(100vw - 82px);
+		min-height: 160px;
+
+		.table {
+			.label {
+				padding-left: 10px;
+				padding-right: 10px;
+				color: $color-primary-dark;
+			}
+
+			.show-details-icon {
+				width: 16px;
+				fill: $color-neutral-light;
+				cursor: pointer;
+
+				&:hover {
+					fill: $color-blue;
+				}
+			}
+
+			.role-item-wrapper {
+				display: flex;
+
+				.role-item-customer {
+					margin-right: 4px;
+				}
+			}
+
+			td.actions {
+				.icon {
+					width: 16px;
+					display: block;
+					margin: 0 auto;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+
+	.paginator {
+		margin-top: 48px;
+	}
+}

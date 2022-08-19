@@ -1,0 +1,47 @@
+{
+	"compileOnSave": false,
+	"compilerOptions": {
+		"baseUrl": "./",
+		"outDir": "./dist/out-tsc",
+		"sourceMap": true,
+		"declaration": false,
+		"module": "es2020",
+		"moduleResolution": "node",
+		"experimentalDecorators": true,
+		"importHelpers": true,
+		"paths": {
+			"@core/*": [
+				"src/app/core/*"
+			],
+			"@shared/*": [
+				"src/app/shared/*"
+			],
+			"@modules/*": [
+				"src/app/modules/*"
+			],
+			"@components/*": [
+				"src/app/core/components/*"
+			],
+			"@services/*": [
+				"src/app/core/services/*"
+			],
+			"@models/*": [
+				"src/app/core/models/*"
+			],
+			"@helpers/*": [
+				"src/app/core/helpers/*"
+			],
+			"@environments/*": [
+				"src/environments/*"
+			]
+		},
+		"target": "es5",
+		"typeRoots": [
+			"node_modules/@types"
+		],
+		"lib": [
+			"es2018",
+			"dom"
+		]
+	}
+}

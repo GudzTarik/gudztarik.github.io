@@ -1,0 +1,135 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h7 {
+	font-weight: 700;
+}
+
+// headlines
+h1 {
+	font-size: 48px;
+	line-height: 43px;
+}
+
+h2 {
+	font-size: 28px;
+	line-height: 30px;
+}
+
+h3 {
+	font-size: 24px;
+	line-height: 28px;
+}
+
+h4 {
+	font-size: 18px;
+	line-height: 24px;
+}
+
+h5 {
+	font-size: 16px;
+	line-height: 20px;
+}
+
+h6 {
+	font-size: 14px;
+	line-height: 18px;
+}
+
+h7 {
+	font-size: 12px;
+	line-height: 16px;
+}
+
+// text
+.text-xxxl,
+.text-xxl,
+.text-xl,
+.text-m,
+.text-s,
+.text-xs,
+.text-xxs {
+	letter-spacing: 0.01em;
+}
+
+.text-xxxl {
+	font-size: 24px;
+	line-height: 32px;
+}
+
+.text-xxl {
+	font-size: 20px;
+	line-height: 30px;
+}
+
+.text-xl {
+	font-size: 18px;
+	line-height: 27px;
+}
+
+.text-m {
+	font-size: 16px;
+	line-height: 24px;
+}
+
+.text-s {
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.text-xs {
+	font-size: 12px;
+	line-height: 17px;
+	letter-spacing: 0.01em;
+}
+
+.text-xxs {
+	font-size: 11px;
+	line-height: 16px;
+}
+
+// text colors
+.text-white {
+	color: #fff;
+}
+
+// text position
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-center {
+	text-align: center;
+}
+
+// text transform
+.text-capitalize {
+	text-transform: capitalize;
+}
+
+.text-uppercase {
+	text-transform: uppercase;
+}
+
+.hover-underline:hover {
+	text-decoration: underline;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+.fw-700 {
+	font-weight: 700;
+}
+
+.fw-400 {
+	font-weight: 400;
+}

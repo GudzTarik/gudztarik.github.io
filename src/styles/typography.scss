@@ -1,0 +1,17 @@
+@for $i from 1 through 100 {
+	.font-#{i} {
+		font-size: unquote('#{$i}px') !important;
+	}
+}
+
+.text-bold {
+	font-weight: 700;
+}
+
+.text-semi-bold {
+	font-weight: 500;
+}
+
+.no-wrap {
+	white-space: nowrap;
+}

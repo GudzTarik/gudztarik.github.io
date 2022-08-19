@@ -1,0 +1,71 @@
+@import 'variables';
+
+:host {
+	position: relative;
+}
+
+header {
+	display: flex;
+	justify-content: center;
+	background-color: $color-white;
+	padding: 16px;
+	box-shadow: $header-box-shadow;
+	width: 100%;
+	position: sticky;
+	top: 0;
+}
+
+.header-nav {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.burger-menu {
+	color: $color-neutral-light;
+	display: none;
+	padding: 0;
+}
+
+a {
+	font-weight: 300;
+	font-size: $font-16;
+	color: $color-primary-dark;
+}
+
+.active {
+	font-weight: 600;
+	color: $color-primary-dark;
+	border-bottom: 2px solid $color-primary-dark;
+}
+
+.disabled {
+	font-weight: 600;
+	color: $color-neutral-light;
+	pointer-events: none;
+}
+
+.profile-button {
+	border: 1px solid $color-neutral-light;
+	border-radius: 24px;
+	padding: 4px 6px;
+
+	&.opened {
+		border-color: $color-primary-dark;
+		color: $color-primary-dark;
+	}
+
+	.burger-icon {
+		margin-right: 6px;
+	}
+
+	.person-icon {
+		width: 20px;
+		height: 20px;
+	}
+
+	.burger-icon {
+		width: 14px;
+		height: 20px;
+	}
+}

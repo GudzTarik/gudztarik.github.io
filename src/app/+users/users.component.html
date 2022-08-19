@@ -1,0 +1,136 @@
+<div class="users-wrapper">
+	<div class="users-table">
+		<table (matSortChange)="sortData($event)"
+					 [dataSource]="users"
+					 class="table"
+					 mat-table
+					 matSort>
+			<ng-container matColumnDef="role">
+				<th *matHeaderCellDef class="label" mat-header-cell>
+					{{ 'user.roleLabel' | translate }}
+				</th>
+
+				<td *matCellDef="let element" mat-cell>
+					<div class="label">
+						<div class="role-item-wrapper">
+							<!--              <div *ngIf="element.roles.includes('Customer')"-->
+							<!--                   class="role-item role-item-customer">-->
+							<!--                C-->
+							<!--              </div>-->
+
+							<!--              <div *ngIf="element.roles.includes('Editor')"-->
+							<!--                   class="role-item role-item-editor">-->
+							<!--                F-->
+							<!--              </div>-->
+							<div class="role-item role-item-editor">{{ element.role }}</div>
+						</div>
+					</div>
+				</td>
+			</ng-container>
+
+			<ng-container matColumnDef="firstName">
+				<th *matHeaderCellDef class="label" mat-header-cell>
+					{{ 'user.firstNameLabel' | translate }}
+				</th>
+
+				<td *matCellDef="let element" mat-cell>
+					<div class="label">{{ element.firstName ? element.firstName : '-' }}</div>
+				</td>
+			</ng-container>
+
+			<ng-container matColumnDef="lastName">
+				<th *matHeaderCellDef class="label" mat-header-cell>
+					{{ 'user.lastNameLabel' | translate }}
+				</th>
+
+				<td *matCellDef="let element" mat-cell>
+					<div class="label">{{ element.lastName ? element.lastName : '-' }}</div>
+				</td>
+			</ng-container>
+
+			<ng-container matColumnDef="email">
+				<th *matHeaderCellDef class="label" mat-header-cell>
+					{{ 'user.emailLabel' | translate }}
+				</th>
+
+				<td *matCellDef="let element" mat-cell>
+					<div class="label">{{ element.email ? element.email : '-' }}</div>
+				</td>
+			</ng-container>
+
+			<ng-container matColumnDef="phone">
+				<th *matHeaderCellDef class="label" mat-header-cell>
+					{{ 'user.phoneLabel' | translate }}
+				</th>
+
+				<td *matCellDef="let element" mat-cell>
+					<div class="label">{{ element.phone ? element.phone : '-' }}</div>
+				</td>
+			</ng-container>
+
+			<ng-container matColumnDef="imageUrl">
+				<th *matHeaderCellDef class="label" mat-header-cell>
+					{{ 'user.imageLabel' | translate }}
+				</th>
+
+				<td *matCellDef="let element" mat-cell>
+					<div class="label">{{ element.imageUrl || '-' }}</div>
+				</td>
+			</ng-container>
+
+			<ng-container matColumnDef="status">
+				<th *matHeaderCellDef class="label" mat-header-cell>
+					{{ 'user.statusLabel' | translate }}
+				</th>
+
+				<td *matCellDef="let element" mat-cell>
+					<div class="label">{{ element.status || '-' }}</div>
+				</td>
+			</ng-container>
+
+			<ng-container matColumnDef="requestsAmount">
+				<th *matHeaderCellDef class="label" mat-header-cell>
+					{{ 'user.requestsAmountLabel' | translate }}
+				</th>
+
+				<td *matCellDef="let element" mat-cell>
+					<div class="label">{{ element.requestsAmount ? element.requestsAmount : '-' }}</div>
+				</td>
+			</ng-container>
+
+			<ng-container matColumnDef="actions">
+				<th *matHeaderCellDef class="label" mat-header-cell>
+					{{ 'user.actionsLabel' | translate }}
+				</th>
+
+				<td *matCellDef="let element" class="actions" mat-cell>
+					<div *ngIf="element.status !== 'Deleted'" class="label">
+						<mat-icon [matMenuTriggerFor]="menu" class="icon" svgIcon="options-icon"></mat-icon>
+
+						<mat-menu #menu="matMenu">
+							<button (click)="openDeleteAccountDialog(element.id)" mat-menu-item>
+								{{ 'user.deleteAccountLabel' | translate }}
+							</button>
+						</mat-menu>
+					</div>
+				</td>
+			</ng-container>
+
+			<tr *matHeaderRowDef="tableColumns" mat-header-row></tr>
+
+			<tr *matRowDef="let row; columns: tableColumns" mat-row></tr>
+		</table>
+
+		<p *ngIf="!users.length" class="records-not-found">
+			{{ 'general.noRecordsFoundLabel' | translate }}
+		</p>
+	</div>
+
+	<mat-paginator (page)="paginatorEvent($event)"
+								 [length]="totalCount"
+								 [pageIndex]="getUsersFormGroup.controls['pageIndex'].value"
+								 [pageSizeOptions]="pageSizeOptions"
+								 [pageSize]="getUsersFormGroup.controls['pageSize'].value"
+								 class="paginator">
+	</mat-paginator>
+</div>

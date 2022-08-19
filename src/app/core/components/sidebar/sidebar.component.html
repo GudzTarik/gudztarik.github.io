@@ -1,0 +1,33 @@
+<div class="sidebar-header">
+	<a [routerLink]="['dashboard']" class="sidebar-logo">
+		<p>{{ 'general.iLoadLabel' | translate }}</p>
+	</a>
+
+	<button (click)="closeSidenav.emit()" disableRipple mat-button>
+		<mat-icon [svgIcon]="'close-icon'" class="close-icon"></mat-icon>
+	</button>
+</div>
+
+<div class="sidebar-content">
+	<div class="sidebar-navigation">
+		<a [routerLink]="['dashboard']" routerLinkActive="active">{{ 'general.dashboardLabel' | translate }}</a>
+
+		<a *ngIf="authService.isAuthenticated()" [routerLink]="['users']"
+			 routerLinkActive="active">{{ 'general.usersLabel' | translate }}</a>
+
+		<a *ngIf="authService.isAuthenticated()" [routerLink]="['requests']"
+			 routerLinkActive="active">{{ 'general.requestsLabel' | translate }}</a>
+
+		<ng-container *ngIf="!authService.isAuthenticated()">
+			<a [routerLink]="['/auth/sign-up']">{{ 'auth.signUpLabel' | translate }}</a>
+
+			<a [routerLink]="['/auth/sign-in']">{{ 'auth.signInLabel' | translate }}</a>
+		</ng-container>
+
+		<ng-container *ngIf="authService.isAuthenticated()">
+			<a [routerLink]="['/account']" routerLinkActive="active">{{ 'general.accountLabel' | translate }}</a>
+
+			<a (click)="logout()">{{ 'auth.logoutLabel' | translate }}</a>
+		</ng-container>
+	</div>
+</div>

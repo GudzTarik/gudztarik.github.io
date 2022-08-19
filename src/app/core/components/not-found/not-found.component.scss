@@ -1,0 +1,27 @@
+@import 'variables';
+
+.not-found-wrapper {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding-top: 50px;
+	padding-bottom: 50px;
+
+	.section-title {
+		font-size: 200px;
+		line-height: unset;
+	}
+
+	.section-sub-title {
+		margin-top: 50px;
+		text-align: center;
+	}
+
+	.section-description {
+		margin-top: 24px;
+		max-width: 400px;
+		text-align: center;
+	}
+}
