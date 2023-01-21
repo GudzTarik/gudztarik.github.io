@@ -1,0 +1,85 @@
+{
+	"general": {
+		"iLoadLabel": "iLoad",
+		"dashboardLabel": "Дашборд",
+		"usersLabel": "Користувачі",
+		"requestsLabel": "Запити",
+		"createRequestLabel": "Створити запит",
+		"accountLabel": "Мій аккаунт",
+		"noRecordsFoundLabel": "Не знайдено жодних даних",
+		"cancelLabel": "Відміна",
+		"deleteLabel": "Видалити",
+		"goBackLabel": "Повернутись назад",
+		"goToDashboardLabel": "Повернутись до дошки"
+	},
+	"user": {
+		"roleLabel": "Роль",
+		"firstNameLabel": "Ім'я",
+		"lastNameLabel": "Прізвище",
+		"emailLabel": "Емейл",
+		"phoneLabel": "Телефон",
+		"imageLabel": "Фото",
+		"statusLabel": "Статус",
+		"requestsAmountLabel": "Кількість запитів",
+		"requestsLabel": "Запити",
+		"actionsLabel": "Дії",
+		"deleteAccountLabel": "Видалити акаунт",
+		"confirmDeleteAccountLabel": "Ви справді хочете видалити даного користувача ?"
+	},
+	"auth": {
+		"signUpLabel": "Реєстрація",
+		"signInLabel": "Вхід",
+		"logoutLabel": "Вихід",
+		"passwordLabel": "Пароль",
+		"repeatPasswordLabel": "Повторіть Пароль",
+		"backToLoginLabel": "Повернутися до входу",
+		"signIn": {
+			"titleLabel": "Вітаємо в iLoad",
+			"forgotPasswordLabel": "Забули пароль?",
+			"notRegisteredLabel": "Все ще не зареєстровані?"
+		},
+		"passwordReset": {
+			"titleLabel": "Відновлення паролю",
+			"descriptionLabel": "Введіть свою електронну пошту і ми відправимо Вам посилання для створення нового паролю",
+			"resetPasswordLabel": "Відновити пароль"
+		},
+		"signUp": {
+			"titleLabel": "",
+			"notRegisteredLabel": "Вже зареєстровані?",
+			"confirmSignUpTitleLabel": "Дякуємо за реєстрацію",
+			"confirmSignUpSuTitleLabel": "Ви успішно підтвердили свій емейл та зареєструвалися. Зологіньтесь шо почати користуватися всіма функціями порталу."
+		},
+		"createPassword": {
+			"createPasswordLabel": "Створіть новий пароль",
+			"createNewPasswordLabel": "Створити пароль"
+		}
+	},
+	"notFound": {
+		"notFoundLabel": "Сторінку не знайдено",
+		"notFoundDescriptionLabel": "Сторінка, яку ви шукаєте, була переміщена, видалена, перейменована або, можливо, ніколи не існувала"
+	},
+	"forbidden": {
+		"forbiddenLabel": "Сторінка не дозволена",
+		"forbiddenDescriptionLabel": "Ви не маєте доступу для перегляду цієї сторінки"
+	},
+	"validationService": {
+		"required": "Це поле обов'язкове",
+		"email": "Електронна пошта введена невірно",
+		"emailIncorrect": "Електронна пошта введена невірно",
+		"passwordIncorrect": "Пароль занадно слабкий",
+		"wrongConfirmPassword": "Паролі не збігаються"
+	},
+	"request": {
+		"nameLabel": "Назва",
+		"descriptionLabel": "Опис",
+		"imageLabel": "Картинка",
+		"statusLabel": "Статус",
+		"createdByLabel": "Ким створений",
+		"actionsLabel": "Дії",
+		"nameLabel": "Назва",
+		"nameLabel": "Назва",
+		"nameLabel": "Назва",
+		"nameLabel": "Назва",
+		"nameLabel": "Назва"
+	}
+}
