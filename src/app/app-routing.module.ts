@@ -13,12 +13,12 @@ const routes: Routes = [
 	{
 		path: 'users',
 		loadChildren: () => import('./+users/users.module').then(({UsersModule}) => UsersModule),
-		canActivate: [AuthGuard]
+		// canActivate: [AuthGuard]
 	},
 	{
 		path: 'requests',
 		loadChildren: () => import('./+requests/requests.module').then(({RequestsModule}) => RequestsModule),
-		canActivate: [AuthGuard]
+		// canActivate: [AuthGuard]
 	},
 	{
 		path: '403',
